@@ -1,36 +1,38 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useEffect, useContext} from 'react';
 import authContext from '../../context/auth/authContext'
 import Header from '../../layout/header'
 import Sidebar from '../../layout/sidebar'
-import NewTagDescriptor from './newTagDescriptor';
-import SearchTagDescriptor from './searchTagDescriptor';
+import SystemForm from '../system/systemForm'
+import SystemList from '../system/systemList'
 
 
-
-const Tagsdescriptors = () => {
-
+const Assets = () => {
     const auContext = useContext(authContext)
-    const {user,getUser,logoff} = auContext;
+    const {getUser} = auContext;
 
     useEffect(() => {
         getUser()
     }, [])
     
     return ( 
-       
+        <div className="contenedor-app">
+            <Sidebar/>
+            
             <div className="seccion-principal">
-                {/*<Header/>*/}
+                {/* <Barra/> */}
+                <Header/>
+                
                 <main>
-                  {/* <FormTarea/> */}
-                    <SearchTagDescriptor/>
+                <SystemForm/>
                     
                     <div className="contenedor-tareas">
-                        <NewTagDescriptor/>
-                      {/*  <ListadoTareas/> */}
+                      <SystemList/>
+                      
                     </div>
                 </main>
             </div>
+        </div>
      );
 }
  
-export default Tagsdescriptors;
+export default Assets;

@@ -24,6 +24,7 @@ const AuthState = (props) => {
 
     const createUser = async (user) =>{
         try {
+            console.log(user);
             const res = await axiosClient.post('api/users', user)
             dispatch({
                 type:CREATE_USER_SUCCESS,
@@ -74,7 +75,7 @@ const AuthState = (props) => {
 
     const loginUser = async (user)=>{
         try {
-            
+            console.log(user)
             const res = await axiosClient.post('/api/auth', user)
             dispatch({
                 type:LOGIN_SUCCESS,
@@ -84,7 +85,7 @@ const AuthState = (props) => {
             getUser()
             
         } catch (error) {
-            console.log(error.response.data.msg);
+            console.log(error);
             const alert = {
                 msg: error.response.data.msg,
                 category: 'alerta-error'

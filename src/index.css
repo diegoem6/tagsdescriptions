@@ -15,6 +15,7 @@ html {
   height: 100%;
   font-size: 62.5%; 
 }
+/*rgb(54, 78, 97)*/
 body {
   min-height: 100%;
   background-color: var(--gris1);
@@ -65,7 +66,7 @@ a {
   cursor: pointer;
 }
 .btn-primario {
-  background-color: rgb(3, 31, 3);
+  background-color: var(--gris2);
   color: var(--blanco);
 }
 .btn-primario:hover {
@@ -124,6 +125,32 @@ aside  {
 .formulario-nuevo-proyecto .input-text::placeholder{
   color: var(--gris2);
 }
+
+.form-new-system {
+  margin-top: 6rem;
+}
+.form-new-system .input-text {
+  border-bottom: 1px solid var(--gris2);
+  border-radius: 0;
+  background-color: var(--gris1);
+}
+.form-new-system .input-text::placeholder{
+  color: var(--gris2);
+}
+
+.form-new-asset {
+  margin-top: 6rem;
+}
+.form-new-asset .input-text {
+  border-bottom: 1px solid var(--gris2);
+  border-radius: 0;
+  background-color: var(--gris1);
+}
+.form-new-asset .input-text::placeholder{
+  color: var(--gris2);
+}
+
+
 .proyectos {
   margin-top: 10rem;
 }
@@ -136,6 +163,20 @@ aside  {
   line-height: 1.5;
   font-weight: 300;
 }
+
+.assets {
+  margin-top: 10rem;
+}
+.list-assets li {
+  margin-bottom: 2rem;
+}
+.list-assets li a {
+  font-size: 1.4rem;
+  color: var(--gris2);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -270,6 +311,7 @@ aside  {
 
 
 .tarea-enter,
+
 .proyecto-enter {
   opacity: 0;
 }
@@ -288,8 +330,27 @@ aside  {
   transition: opacity 200ms;
 }
 
+.asset-enter {
+  opacity: 0;
+}
+.tarea-enter-active,
+.asset-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.tarea-exit,
+.asset-exit {
+  opacity: 1;
+}
+.tarea-exit-active,
+.asset-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+
 .form-usuario {
-    background-color: rgb(3, 31, 3);
+    background-color: var(--gris1);
     height: 100vh;
     min-height: 800px;
     display: flex;
